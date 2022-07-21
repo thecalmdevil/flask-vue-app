@@ -12,7 +12,7 @@ def pop_api_d()
         for data in api_data:
             if[ data["source"] ] = []
 
-            quotes[ data["author"]].append( data["text"])
+            quotes[ data["source"]].append( data["text"])
 
             return quotes
 
@@ -45,3 +45,10 @@ def pop_api_d()
 
 
 if __name__ == '__main__':
+    api_data = create_api_d()
+    source = form_output_d(api_data)
+    sources = list( quotes.keys())
+    images = get_image_info(source)
+    create_json("sources.json", sources)
+    create_json("images.json", images)
+    
